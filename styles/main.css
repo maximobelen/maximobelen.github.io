@@ -98,3 +98,12 @@ body{
   height: 50px;
   width: 50px;
 }
+
+.socials{
+  list-style: none;
+}
+.socials li img{
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}

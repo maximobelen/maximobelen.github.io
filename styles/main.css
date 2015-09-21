@@ -42,3 +42,37 @@ body{
 .job{
   font-size: 33px;
 }
+
+.avatar{
+  text-align: center;
+  top: 650px;
+  width: 100%;
+  display: block;
+}
+.avatar img{
+  border-radius: 250px;
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+}
+
+.section{
+  text-align: center;
+  margin-top: 150px;
+  position: relative;
+  margin: 60px;
+}
+
+.section .title{
+  margin-top: 0;
+  color: #2c3d4f;
+  font-weight: 800;
+  letter-spacing: 5px;
+  line-height: 60px;
+  font-size: 60px;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+}
+
+.section .description{
+  font-size: 22px;
+}

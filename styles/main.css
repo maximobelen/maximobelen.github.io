@@ -73,7 +73,7 @@ body{
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
 }
 .about-me{
-  margin-top: 200px;
+  margin-top: 240px;
 }
 .section .description{
   font-size: 22px;
@@ -90,4 +90,11 @@ body{
 }
 .experience .work .description{
   font-size: 15px;
+}
+.skills{
+  list-style: none;
+}
+.skills li img{
+  height: 50px;
+  width: 50px;
 }

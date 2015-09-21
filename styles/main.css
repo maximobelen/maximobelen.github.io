@@ -1,0 +1,44 @@
+html{
+  margin: 0;
+  height: 100%;
+  width: 100;
+}
+
+body{
+  margin: 0;
+  height: 100%;
+  width: 100;
+}
+
+.header{
+  background: url("../images/header.png") no-repeat;
+  height: 100%;
+  padding-top: 250px;
+}
+
+.header .container{
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.header h2{
+  margin-top: 0;
+}
+
+.title-text{
+  color: #FFFFFF;
+  font-weight: 800;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  padding-bottom: 5px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.name{
+  font-size: 90px;
+}
+
+.job{
+  font-size: 33px;
+}

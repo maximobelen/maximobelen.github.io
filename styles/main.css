@@ -177,8 +177,19 @@ body{
     line-height: 20px;
     margin-top: 30px;
   }
-
-
-
-
+  .skills li{
+    color: transparent;
+  }
+  .skills li img{
+    height: 40px;
+    width: 40px;
+  }
+  .socials li{
+    color: transparent;
+  }
+  .socials li img{
+    height: 40px;
+    width: 40px;
+    color: transparent;
+  }
 }

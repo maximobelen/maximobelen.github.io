@@ -22,15 +22,14 @@ body{
 
 .header{
   background: url("../images/header.png") no-repeat;
-  background-size: 100%;
+  background-size: cover;
   height: 830px;
+  width: 100%;
   padding-top: 250px;
 }
 
 .header .container{
   text-align: center;
-  width: 400px;
-  margin: 0 auto;
 }
 
 .header h2{
@@ -55,8 +54,9 @@ body{
 }
 
 .avatar{
+  position: absolute;
   text-align: center;
-  top: 650px;
+  top: 550px;
   width: 100%;
   display: block;
   margin-top: 80px;
@@ -130,4 +130,55 @@ body{
   height: 50px;
   width: 50px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header{
+    height: 630px;
+    padding-top: 200px;
+  }
+  .name{
+    font-size: 60px;
+  }
+  .job{
+    font-size: 25px;
+  }
+  .avatar{
+    top: 450px;
+  }
+  .avatar img{
+    height: 200px;
+    width: 200px;
+  }
+  .section{
+    margin-top: 50px;
+  }
+  .section .title{
+    font-size: 30px;
+  }
+  .section .description{
+    font-size: 15px;
+  }
+  .about-me{
+    margin-top: 100px;
+  }
+  .experience .work h4{
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 30px;
+    margin-bottom: 2px;
+  }
+  .experience .work .enterprise{
+    margin-top: 0px;
+    font-size: 17px;
+  }
+  .education .course h4{
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 30px;
+  }
+
+
+
+
 }

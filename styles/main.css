@@ -54,12 +54,18 @@ body{
 }
 
 .avatar{
+  background-color: #ffffff;
+  border-radius: 250px;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
   top: 550px;
-  width: 100%;
+  height: 400px;
+  width: 400px;
   display: block;
   margin-top: 80px;
+  left: 0;
+  right: 0;
 }
 .avatar img{
   border-radius: 250px;
@@ -145,6 +151,8 @@ body{
   }
   .avatar{
     top: 450px;
+    height: 200px;
+    width: 200px;
   }
   .avatar img{
     height: 200px;

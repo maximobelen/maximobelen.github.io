@@ -6,10 +6,12 @@
   <title>Máximo Belén Fassnacht</title>
   <link type="text/css" rel="stylesheet" href="styles/main.css">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script type="text/javascript">
     $(window).load(function() {
       $(".loader").fadeOut("slow");
-    });
+      this.init();
+    }.bind(this));
   </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <!-- Optional theme -->
@@ -23,7 +25,7 @@
       <h3 class="title-text job">SOFTWARE DEVELOPER</h3>
     </div>
     <div class="avatar">
-      <img src="./images/profile.png"></img>
+      <img class="image" src="./images/profile.png"></img>
     </div>
   </div>
   <div class="container-fluid section about-me">

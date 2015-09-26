@@ -1,3 +1,9 @@
+window.onload = function() {
+  var loader = document.getElementsByClassName('loader')[0];
+  TweenMax.to(loader, 0.4, {autoAlpha:0, ease: Power2.easeOut});
+  this.init();
+};
+
 var init = function(){
   var name = document.getElementsByClassName('name')[0];
   var job = document.getElementsByClassName('job')[0];
@@ -29,4 +35,11 @@ var addListeners =  function(){
     TweenLite.to(image, 0.4, {autoAlpha:1, scaleX:1, scaleY:1, ease: Power2.easeOut});
     TweenLite.to(background, 0.4, {scaleX:1, scaleY:1, ease: Power2.easeOut});
   }.bind(this), false);
+
+  window.addEventListener('scroll', this.onScroll, true);
+};
+
+var onScroll =  function() {
+
+    var scrollTop = window.scrollY;
 };

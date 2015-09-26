@@ -103,7 +103,7 @@ var animateSection =  function(scrollTop) {
       var element = sections[i];
       var section = element.section;
       var timeToShow = (section.offsetTop - 500 < scrollTop);
-      var timeToHide = ((section.offsetTop + section.clientHeight < scrollTop) || (section.offsetTop - 500 > scrollTop));
+      var timeToHide = (section.offsetTop - 500 > scrollTop);
       if( timeToShow && !timeToHide && element.hide){
         element.hide = false;
         isAnimating = true;

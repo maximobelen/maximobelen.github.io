@@ -4,6 +4,7 @@ window.onload = function() {
   this.init();
 };
 
+var scroller = new ScrollManager();
 var imageHide = true;
 var headerHide = false;
 var isAnimating = false;
@@ -40,6 +41,8 @@ var addListeners =  function(){
   }.bind(this), false);
 
   window.addEventListener('scroll', this.onScroll, true);
+  document.getElementById('up-button').addEventListener('mousedown', this.goToTop, true);
+  document.getElementById('down-button').addEventListener('mousedown', this.goDown, true);
 };
 
 var onScroll =  function() {
@@ -76,17 +79,21 @@ var animateImage =  function(scrollTop) {
 var animateHeader =  function(scrollTop) {
   var name = document.getElementById('name');
   var job = document.getElementsByClassName('job')[0];
+  var arrow = document.getElementById('down-button');
+
 
   if(headerHide  && scrollTop < 200){
     headerHide = false;
     TweenMax.fromTo(name, 0.4, {autoAlpha:0, y: 50}, {autoAlpha:1, y:0, ease: Power2.easeOut});
     TweenMax.fromTo(job, 0.4, {autoAlpha:0, y: 50}, {delay:0.2, autoAlpha:1, y:0, ease: Power2.easeOut});
-    
+    TweenMax.fromTo(arrow, 0.4, {autoAlpha: 0},{autoAlpha:1});
   }else{
     if(!headerHide && scrollTop > 300){
       headerHide = true;
       TweenMax.fromTo(name, 0.4, {autoAlpha:1, y: 0}, {delay:0.2, autoAlpha:0, y:50, ease: Power2.easeOut});
       TweenMax.fromTo(job, 0.4, {autoAlpha:1, y: 0}, {autoAlpha:0, y:50, ease: Power2.easeOut});
+      TweenMax.fromTo(arrow, 0.4, {autoAlpha: 1},{autoAlpha:0});
+
     }
   }
 };
@@ -95,7 +102,7 @@ var animateSection =  function(scrollTop) {
     for (var i = 0; i < sections.length; i++) {
       var element = sections[i];
       var section = element.section;
-      var timeToShow = (section.offsetTop - 400 < scrollTop);
+      var timeToShow = (section.offsetTop - 500 < scrollTop);
       var timeToHide = ((section.offsetTop + section.clientHeight < scrollTop) || (section.offsetTop - 500 > scrollTop));
       if( timeToShow && !timeToHide && element.hide){
         element.hide = false;
@@ -119,4 +126,13 @@ var animateSection =  function(scrollTop) {
       }
     }
   }
+};
+var goToTop =  function() {
+  scroller.scrollTop({element:document.body, duration:0.8, ease:'easeOutCubic'});
+};
+var goDown =  function() {
+  var arrow = document.getElementById('down-button');
+  TweenMax.fromTo(arrow, 0.4, {autoAlpha: 1},{autoAlpha:0});
+  scroller.scrollTo({element:document.body, to:600, duration:0.8, ease:'easeOutCubic'});
+
 };

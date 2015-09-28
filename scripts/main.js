@@ -2,12 +2,17 @@ window.onload = function() {
   var loader = document.getElementsByClassName('loader')[0];
   TweenMax.to(loader, 0.4, {autoAlpha:0, ease: Power2.easeOut});
   this.init();
+
+  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  window.requestAnimationFrame = requestAnimationFrame;
 };
 
 var scroller = new ScrollManager();
 var imageHide = true;
 var headerHide = false;
 var isAnimating = false;
+var isAnimatingHeader = false;
 var sections = [{section:document.getElementById('about-me'), hide: true},
     {section:document.getElementById('experience'), hide: true},
     {section:document.getElementById('education'), hide: true},
@@ -51,6 +56,8 @@ var onScroll =  function() {
     animateImage(scrollTop);
     animateSection(scrollTop);
     animateHeader(scrollTop);
+
+    requestAnimationFrame(onScroll);
 };
 
 var animateImage =  function(scrollTop) {
@@ -81,19 +88,30 @@ var animateHeader =  function(scrollTop) {
   var job = document.getElementsByClassName('job')[0];
   var arrow = document.getElementById('down-button');
 
+  if(!isAnimatingHeader){
+    if(headerHide  && scrollTop < 200){
+      isAnimatingHeader = true;
+      TweenMax.fromTo(name, 0.4, {autoAlpha:0, y: 50}, {autoAlpha:1, y:0, ease: Power2.easeOut,
+        onComplete:function(){
+          headerHide = false;
+          isAnimatingHeader = false;
+        }.bind(this)
+      });
+      TweenMax.fromTo(job, 0.4, {autoAlpha:0, y: 50}, {delay:0.2, autoAlpha:1, y:0, ease: Power2.easeOut});
+      TweenMax.fromTo(arrow, 0.4, {autoAlpha: 0},{autoAlpha:1});
+    }else{
+      if(!headerHide && scrollTop > 300){
+        isAnimatingHeader = true;
+        TweenMax.fromTo(name, 0.4, {autoAlpha:1, y: 0}, {delay:0.2, autoAlpha:0, y:50, ease: Power2.easeOut, 
+          onComplete:function(){
+            headerHide = true;
+            isAnimatingHeader = false;
+          }.bind(this)
+        });
+        TweenMax.fromTo(job, 0.4, {autoAlpha:1, y: 0}, {autoAlpha:0, y:50, ease: Power2.easeOut});
+        TweenMax.fromTo(arrow, 0.4, {autoAlpha: 1},{autoAlpha:0});
 
-  if(headerHide  && scrollTop < 200){
-    headerHide = false;
-    TweenMax.fromTo(name, 0.4, {autoAlpha:0, y: 50}, {autoAlpha:1, y:0, ease: Power2.easeOut});
-    TweenMax.fromTo(job, 0.4, {autoAlpha:0, y: 50}, {delay:0.2, autoAlpha:1, y:0, ease: Power2.easeOut});
-    TweenMax.fromTo(arrow, 0.4, {autoAlpha: 0},{autoAlpha:1});
-  }else{
-    if(!headerHide && scrollTop > 300){
-      headerHide = true;
-      TweenMax.fromTo(name, 0.4, {autoAlpha:1, y: 0}, {delay:0.2, autoAlpha:0, y:50, ease: Power2.easeOut});
-      TweenMax.fromTo(job, 0.4, {autoAlpha:1, y: 0}, {autoAlpha:0, y:50, ease: Power2.easeOut});
-      TweenMax.fromTo(arrow, 0.4, {autoAlpha: 1},{autoAlpha:0});
-
+      }
     }
   }
 };

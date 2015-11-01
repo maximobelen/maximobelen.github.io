@@ -129,6 +129,10 @@ body{
   font-size: 22px;
   font-weight: 100;
 }
+.about-me #description-container{
+  margin-bottom: 50px;
+}
+
 #canvas-container{
   position: absolute;
 }

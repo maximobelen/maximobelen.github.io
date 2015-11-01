@@ -13,7 +13,7 @@ var imageHide = true;
 var headerHide = false;
 var isAnimating = false;
 var isAnimatingHeader = false;
-var sections = [{section: document.getElementById('about-me'), hide: true},
+var sections = [
     {section: document.getElementById('experience'), hide: true},
     {section: document.getElementById('education'), hide: true},
     {section: document.getElementById('skills'), hide: true},

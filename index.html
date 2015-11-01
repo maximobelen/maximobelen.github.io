@@ -32,7 +32,8 @@
      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
     </div>
   </div>
-  <div id="about-me" class="container-fluid section about-me">
+  <div id="about-me" class="container-fluid about-me">
+    <div id="canvas-container"></div>
     <h2 class="title col-md-10 col-md-offset-1">ABOUT ME</h2>
     <p class="description col-md-10 col-md-offset-1">Software Engineer - Object-Oriented Analysis, Design and Development</p>
     <p class="description col-md-10 col-md-offset-1">
@@ -82,26 +83,26 @@
   <div id="skills" class="container-fluid section skills">
     <h2 class="title col-md-10 col-md-offset-1">SKILLS</h2>
     <ul class="skills container-fluid">
-      <li class="col-xs-3"><img src="./images/skills/javascript.png">JavaScript</li>
-      <li class="col-xs-3"><img src="./images/skills/jquery.png">jQuery</li>
-      <li class="col-xs-3"><img src="./images/skills/node.png">Node.js</li>
-      <li class="col-xs-3"><img src="./images/skills/grunt.png">Grunt</li>
-      <li class="col-xs-3"><img src="./images/skills/gulp.png">Gulp.js</li>
-      <li class="col-xs-3"><img src="./images/skills/backbone.png">Backbone.js</li>
-      <li class="col-xs-3"><img src="./images/skills/require.png">RequireJS</li>
-      <li class="col-xs-3"><img src="./images/skills/css.png">CSS</li>
-      <li class="col-xs-3"><img src="./images/skills/bootstrap.png">Bootstrap</li>
-      <li class="col-xs-3"><img src="./images/skills/git.png">Git</li>
-      <li class="col-xs-3"><img src="./images/skills/svn.png">SVN</li>
-      <li class="col-xs-3"><img src="./images/skills/gweb.png">Google WT</li>
-      <li class="col-xs-3"><img src="./images/skills/html.png">HTML</li>
-      <li class="col-xs-3"><img src="./images/skills/xml.png">XML</li>
-      <li class="col-xs-3"><img src="./images/skills/jsp.png">JSP</li>
-      <li class="col-xs-3"><img src="./images/skills/java.png">JAVA</li>
-      <li class="col-xs-3"><img src="./images/skills/maven.png">Maven</li>
-      <li class="col-xs-3"><img src="./images/skills/tomcat.png">Tomcat</li>
-      <li class="col-xs-3"><img src="./images/skills/hibernate.png">Hibernate</li>
-      <li class="col-xs-3"><img src="./images/skills/sql.png">SQL</li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/javascript.png"><span>JavaScript</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/jquery.png"><span>jQuery</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/node.png"><span>Node.js</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/grunt.png"><span>Grunt</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/gulp.png"><span>Gulp.js</span></span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/backbone.png"><span>Backbone.js</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/require.png"><span>RequireJS</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/css.png"><span>CSS</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/bootstrap.png"><span>Bootstrap</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/git.png"><span>Git</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/svn.png"><span>SVN</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/gweb.png"><span>Google WT</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/html.png"><span>HTML</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/xml.png"><span>XML</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/jsp.png"><span>JSP</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/java.png"><span>JAVA</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/maven.png"><span>Maven</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/tomcat.png"><span>Tomcat</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/hibernate.png"><span>Hibernate</span></li>
+      <li class="col-md-3 col-sm-4 col-xs-6"><img class="col-md-12 col-sm-12 col-xs-12" src="./images/skills/sql.png"><span>SQL</span></li>
     </ul>
   </div>
 
@@ -122,6 +123,8 @@
 <footer>
 </footer>
 <script type="text/javascript" src="scripts/utils/Scroll.js"></script>
+<script type="text/javascript" src="scripts/utils/three.min.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="scripts/canvas.js"></script>
 </body>
 </html>

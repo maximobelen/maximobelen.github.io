@@ -181,7 +181,9 @@ body{
   width: 50px;
   cursor: pointer;
 }
-
+.socials li p{
+  color: #000000;
+}
 @media (max-width: 600px) {
   .header{
     height: 630px;
@@ -246,5 +248,8 @@ body{
     height: 40px;
     width: 40px;
     color: transparent;
+  }
+  .socials li p{
+    display: none;
   }
 }

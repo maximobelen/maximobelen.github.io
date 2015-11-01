@@ -19,7 +19,11 @@ function initCanvas() {
   makeParticles(); 
 
   setInterval(update,1000/30); 
-
+  window.addEventListener('resize', function(){
+    camera.aspect = (aboutMe.clientWidth-30) / aboutMe.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( aboutMe.clientWidth-30, aboutMe.clientHeight );
+  }.bind(this), true);
 }
 function update() {
   updateParticles();

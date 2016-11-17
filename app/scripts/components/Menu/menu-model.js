@@ -9,11 +9,11 @@ module.exports = {
 		{
 			title:'Projects',
 			to: 'projects'
-		},
-		{
-			title:'Inspiration',
-			to: 'inspirational-stuff'
-		}
+		}//,
+		// {
+		// 	title:'Inspiration',
+		// 	to: 'inspirational-stuff'
+		// }
 	],
 	'contact': {
 		title: "CONTACT ME",

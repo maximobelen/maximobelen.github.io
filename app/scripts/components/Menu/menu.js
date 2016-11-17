@@ -73,7 +73,7 @@ var Menu = React.createClass({
 				<div ref={'opener'} className="opener">{model.title}</div>
 				<div ref={'menu'} className="real-menu">
 					<div className="close-icon">
-						<Close ref={'close'} onClicked={this.close} ></Close>
+						<Close ref={'close'} onClicked={this.close} grey={false} ></Close>
 					</div>
 					<div className="list">
 					{

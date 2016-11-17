@@ -2,15 +2,18 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./close-model');
 var TweenMax = require('gsap');
-var loadsvg = require('load-svg');
  
 var Close = React.createClass({
 
 	componentDidMount: function() {
 		this.container = ReactDOM.findDOMNode(this);
-		loadsvg(model.closeIcon, function (err, svg) {
-		    this.container.appendChild(svg);
-		}.bind(this));
+		this.image = this.container.getElementsByClassName('close-image')[0];
+		
+		if (this.props.grey) {
+			this.image.src = model.closeIconGrey;
+		} else {
+			this.image.src = model.closeIcon;
+		}
 	},
 
 	handleMouseDown: function(){
@@ -41,6 +44,7 @@ var Close = React.createClass({
 	render: function() {
 		return (
 			<div className="close" onMouseDown={this.handleMouseDown} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+				<img className="close-image"></img>
 			</div>
 		);
 	}

@@ -36,7 +36,7 @@ var About = React.createClass({
 		return (
 			<div className="about">
 				<div className="close-icon">
-					<Close ref={'close'} onClicked={this.closeHandler} ></Close>
+					<Close ref={'close'} onClicked={this.closeHandler} grey={true} ></Close>
 				</div>
 				<div className="scroll-container">
 					<div className="title">{model.title}</div>

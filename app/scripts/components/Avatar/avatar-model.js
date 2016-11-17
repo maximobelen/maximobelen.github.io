@@ -1,3 +1,3 @@
 module.exports = {
-	'profileImage': '../assets/images/profile.png'
+	'profileImage': './assets/images/profile.png'
 };
